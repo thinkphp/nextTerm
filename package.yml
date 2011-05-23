@@ -1,0 +1,7 @@
+name: nextTerm
+author: thinkphp
+current: v1.0
+category: utilities
+tags: [sequence,difference table,next term,array,vector,math]
+docs: https://github.com/thinkphp/nextTerm/blob/master/Docs/nextTerm.md
+demo: http://thinkphp.github.com/nextTerm/

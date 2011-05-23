@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+   <title>Sequence Solver</title>
+   <style type="text/css">
+   body,html{background:#fff;color:#000;font-family: "Trebuchet MS",Trebuchet,Verdana,sans-serif}
+   div#header{border-bottom: 5px solid #29A1C9;color: #29A1C9;;margin-top: 2.75em;width: 50%;margin-left: 200px;}
+   div#header h1{font-size: 40px;} 
+   form#myform {background-color: #7fccff;color: black;margin-bottom: 1em;padding: 0.1em 1em;width: 46.8%;margin-left: 200px;}
+   #solution {font-size: 40px;margin-left: 200px}
+   #solution span.next {color: #393}
+   #footer {margin-left: 200px;margin-top: 200px;}
+   #footer a {color: #393}
+   </style>
+   <script src="http://www.google.com/jsapi?key=ABQIAAAA1XbMiDxx_BTCY2_FkPh06RRaGTYH6UMl8mADNa0YKuWNNa8VNxQEerTAUcfkyrr6OwBovxn7TDAH5Q"></script>
+   <script type="text/javascript">google.load("mootools", "1.3");</script>
+   <script type="text/javascript" src="nextTerm.min.js"></script>
+   <script type="text/javascript">
+
+       //if DOM is ready then begin
+       window.addEvent('domready', function(){
+
+          var trim = function(str) {
+              var str = str.replace(/^\s+/,"").replace(/\s+$/,"");
+             return str;
+          }
+
+          var getSequence = function(id) {
+              var value = document.id(id).value,
+                  raw = value.split(/(,|\s+)/i),
+                  sequence = [];
+
+              for(var i=0,j=raw.length;i<j;i++) {
+                  var x = parseInt(trim(raw[i]));
+                  if((x && x != ",") || x==0) {
+                      sequence.push(x); 
+                  }
+              }  
+             return sequence;    
+          }
+
+          //adds handler for click event #solve
+          document.id('solve').addEvent('click', function(event){
+                 //stop propagation
+                 event.stop();
+                 //grab sequence of integers
+                 var sequence = getSequence("sequence");
+                 //output console
+                 if(window.console) {console.log(sequence);}
+                 //combine with next element
+                 var solution = sequence.combine(['<span class="next">'+ sequence.nextTerm() + '</span>']);
+                 //display the solution
+                 document.id('solution').set('html', solution.join(","));
+          });
+
+       });
+   </script>
+</head>
+<body>
+<div id="header">
+<h1>Plugin Array.nextTerm MooTools</h1>
+<p>Find the next number in the sequence of integers</p>
+</div>
+<form id="myform" action="#">
+<div><label for="sequence">Enter a sequence of integers</label></div>
+<div><textarea id="sequence" rows="4" cols="55">1, 8, 27, 64, 125</textarea></div>
+<div><button id="solve">solve</button></div>
+</form>
+<div id="solution"></div>
+<div id="footer">@<a href="http://twitter.com/thinkphp">thinkphp</a></div>
+</body>
+</html>
+
