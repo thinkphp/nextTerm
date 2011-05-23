@@ -16,8 +16,9 @@ First you must to include the JS files in the head of your HTML document.
         <script type="text/javascript" src="nextTerm.js"></script>
 
 
+Problem: I need to know what number comes next in this sequence?
+
        #JS
-       //problem: I need to know what number comes next in this sequence?
        var sequence = [9,73,241,561,1081,1849];
        //solution:
        console.log("Next number comes next in this sequence is:" + sequence.nextTerm());
