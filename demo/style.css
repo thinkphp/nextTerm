@@ -1,0 +1,12 @@
+.sequence{
+	background-color: #e6fff2 !important;
+	width: 450px;
+	height: 50px;
+}
+@media(max-width: 768px){
+	.sequence{
+	width: 250px;
+	height: 150px;
+	font-size: 20px;
+}
+}

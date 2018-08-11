@@ -3,11 +3,12 @@
 <head>
    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
    <title>Sequence Solver</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
    <style type="text/css">
    body,html{background:#fff;color:#000;font-family: "Trebuchet MS",Trebuchet,Verdana,sans-serif}
    div#header{border-bottom: 5px solid #29A1C9;color: #29A1C9;;margin-top: 2.75em;width: 50%;margin-left: 200px;}
    div#header h1{font-size: 40px;} 
-   form#myform {background-color: #7fccff;color: black;margin-bottom: 1em;padding: 0.1em 1em;width: 46.8%;margin-left: 200px;}
+   form#myform {background-color: #fff;color: black;margin-bottom: 1em;padding: 0.1em 1em;width: 47.1%;margin-left: 200px;}
    #solution {font-size: 40px;margin-left: 200px}
    #solution span.next {color: #393}
    #footer {margin-left: 200px;margin-top: 200px;}
@@ -60,12 +61,15 @@
 <body>
 <div id="header">
 <h1>Plugin Array.nextTerm MooTools</h1>
-<p>Find the next number in the sequence of integers</p>
+<p>Find The Next Number In The Sequence Of Integers</p>
 </div>
 <form id="myform" action="#">
-<div><label for="sequence">Enter a sequence of integers</label></div>
-<div><textarea id="sequence" rows="4" cols="55">1, 8, 27, 64, 125</textarea></div>
-<div><button id="solve">solve</button></div>
+<br>
+<div><label for="sequence" style="font-family: Helvetica; font-size: 18px;">Enter a sequence of integers</label></div>
+<br>
+<div><textarea id= "sequence" class="sequence">1, 8, 27, 64, 125</textarea></div>
+<br>
+<div><button id="solve" style="font-family: Verdana; font-size: 24px;">Solve</button></div>
 </form>
 <div id="solution"></div>
 <div id="footer">@<a href="http://twitter.com/thinkphp">thinkphp</a></div>
